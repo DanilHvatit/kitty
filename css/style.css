@@ -168,6 +168,12 @@ body.lock {
   -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
 }
 
+@media (max-width: 479.98px) {
+  .btn {
+    min-width: auto;
+  }
+}
+
 .btn:after, .btn:before {
   content: "";
   position: absolute;
@@ -742,17 +748,28 @@ ol.counter li:before {
 }
 
 .ibg {
-  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 479.98px) {
+  .ibg-1 {
+    background-position: 60%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .ibg-3 {
+    background-position: 30%;
+  }
 }
 
 .ibg img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
 }
 
 body.ie .ibg {
@@ -1648,33 +1665,12 @@ body.ie .ibg img {
   letter-spacing: 0.16px;
 }
 
+.content {
+  padding: 98px 0 0;
+}
+
 .main {
   background-color: #464646;
-  padding: 390px 0 230px;
-}
-
-@media (max-width: 1182px) {
-  .main {
-    padding: 310px 0px 100px;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .main {
-    padding: 270px 0 90px;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .main {
-    padding-top: 220px;
-  }
-}
-
-@media (max-width: 479.98px) {
-  .main {
-    padding: 170px 0 20px;
-  }
 }
 
 .main__slider {
@@ -1686,28 +1682,67 @@ body.ie .ibg img {
   height: 35px;
   width: 35px;
   position: absolute;
-  top: 30%;
+  top: 50%;
   z-index: 10;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
 }
 
+@media (max-width: 1280px) {
+  .main__slider .slick-next,
+  .main__slider .slick-prev {
+    top: 80%;
+  }
+}
+
+@media (max-width: 1182px) {
+  .main__slider .slick-next,
+  .main__slider .slick-prev {
+    top: 50%;
+  }
+}
+
+@media (max-width: 1080px) {
+  .main__slider .slick-next,
+  .main__slider .slick-prev {
+    top: 80%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .main__slider .slick-next,
+  .main__slider .slick-prev {
+    top: 50%;
+  }
+}
+
+@media (max-width: 850px) {
+  .main__slider .slick-next,
+  .main__slider .slick-prev {
+    top: 80%;
+  }
+}
+
 .main__slider .slick-next.slick-disabled,
 .main__slider .slick-prev.slick-disabled {
-  opacity: 0.2;
+  opacity: 0.5;
   border: 2px solid red;
   border-radius: 50%;
 }
 
 .main__slider .slick-next {
-  background: url(../../img/icons/right.png) 0 0 no-repeat;
-  right: 0;
+  background: url(../img/icons/right.png) center no-repeat, #000000;
+  right: 10px;
+  border-radius: 50%;
+  border: 2px solid #0093b7;
 }
 
 .main__slider .slick-prev {
-  background: url(../../img/icons/left.png) 0 0 no-repeat;
-  left: 0;
+  background: url(../img/icons/left.png) center no-repeat, #000000;
+  left: 10px;
+  border-radius: 50%;
+  border: 2px solid #0093b7;
 }
 
 .main__slider .slick-dots {
@@ -1721,7 +1756,10 @@ body.ie .ibg img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0px 0px 50px 0px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
 }
 
 .main__slider .slick-dots button {
@@ -1738,6 +1776,18 @@ body.ie .ibg img {
 }
 
 .slider-item {
+  height: calc(100vh - 98px);
+}
+
+.slider-item__img {
+  height: calc(100vh - 98px);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.slider-item__wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1747,6 +1797,14 @@ body.ie .ibg img {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 290px 0px 0px 0px;
+}
+
+@media (max-width: 767.98px) {
+  .slider-item__wrapper {
+    margin: 400px 0px 0px 0px;
+  }
 }
 
 .slider-item__title {
@@ -1755,7 +1813,7 @@ body.ie .ibg img {
   font-size: 50px;
   font-weight: 300;
   text-transform: uppercase;
-  padding: 0px 0px 50px 0px;
+  padding: 20px 0px 0px 0px;
 }
 
 .slider-item__title span {
@@ -1769,15 +1827,20 @@ body.ie .ibg img {
   }
 }
 
+@media (max-width: 479.98px) {
+  .slider-item__title {
+    font-size: 30px;
+  }
+}
+
 .slider-item__btn {
-  margin: 50px auto;
+  margin: 30px auto;
 }
 
 @media (max-width: 479.98px) {
   .slider-item__btn {
     padding: 22px 45px;
     font-size: 17px;
-    margin: 0px auto 50px;
   }
 }
 
