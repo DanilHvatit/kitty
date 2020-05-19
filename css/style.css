@@ -3016,7 +3016,7 @@ body.ie .ibg img {
 .spollers__title:after {
   content: "";
   position: absolute;
-  background-image: url(../../img/icons/plus.png);
+  background-image: url(../img/icons/plus.png);
   width: 19px;
   height: 19px;
   right: 0;
@@ -3029,7 +3029,7 @@ body.ie .ibg img {
 .spollers__title:before {
   content: "";
   position: absolute;
-  background-image: url(../../img/icons/minus.png);
+  background-image: url(../img/icons/minus.png);
   width: 17px;
   height: 0px;
   right: 0;
